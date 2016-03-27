@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/search_view"
+        android:title="Search"
+        android:icon="@drawable/ic_search_24dp"
+        app:showAsAction="always|collapseActionView"
+        app:actionViewClass="android.widget.SearchView"
+        />
+
+    <item
+        android:id="@+id/place_picker"
+        android:icon="@drawable/ic_map_24dp"
+        android:title="@string/action_place_picker"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/sort"
+        android:icon="@drawable/ic_sort_24dp"
+        android:title="@string/action_sort"
+        app:showAsAction="always" />
+</menu>
