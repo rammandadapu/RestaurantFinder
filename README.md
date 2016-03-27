@@ -1,4 +1,4 @@
-# RestaurantDetailsActivity
+# RestaurantFinder
 Name: Divya Chittimalla
 SJSU ID: 010090665
 Email: divya.chittimalla@sjsu.edu
