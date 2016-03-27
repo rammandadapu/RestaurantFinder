@@ -155,12 +155,8 @@ public class FavoritesActivity extends AppCompatActivity
     @Override
     public boolean onQueryTextSubmit(String newText)
     {
-        /*if (TextUtils.isEmpty(newText)) {
-            list.clearTextFilter();
-        } else {
-            list.setFilterText(newText.toString());
-        }*/
-        return true;
+        adapter.getFilter().filter(newText);
+        return false;
     }
 
 
@@ -202,6 +198,7 @@ public class FavoritesActivity extends AppCompatActivity
 
             searchView.setMaxWidth(Integer.MAX_VALUE);
             searchView.setQuery(searchTerm, true);
+            //searchView.setQuery(searchView.getQuery().toString(), true);
         }
         return true;
     }
@@ -260,15 +257,18 @@ public class FavoritesActivity extends AppCompatActivity
             @Override
             public void onItemClick(AdapterView<?> parent, View view,
                                     int position, long id) {
+                ArrayList<HashMap<String, String>> filteredData = adapter.getFilteredData();
                 //Toast.makeText(NavActivity.this, "You Clicked at " + oslist.get(+position).get("id"), Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(FavoritesActivity.this, FavoritesDetailsSwipeActivity.class);
-                intent.putExtra(TAG_RES_ID, restaurants.get(+position).get(TAG_RES_ID));
+                intent.putExtra(TAG_RES_ID, filteredData.get(+position).get(TAG_RES_ID));
                 intent.putExtra("list", busineesIdList);
                 intent.putExtra("namesList", busineesNameList);
                 startActivity(intent);
             }
         });
-
+        if(searchView != null) {
+            adapter.getFilter().filter(searchView.getQuery().toString());
+        }
     }
 
     @Override

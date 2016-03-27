@@ -43,6 +43,10 @@ public class CustomListAdapter extends BaseAdapter implements Filterable {
         layoutInflater = LayoutInflater.from(context);
     }
 
+    public ArrayList getFilteredData() {
+        return listData;
+    }
+
     @Override
     public int getCount() {
         return listData.size();
