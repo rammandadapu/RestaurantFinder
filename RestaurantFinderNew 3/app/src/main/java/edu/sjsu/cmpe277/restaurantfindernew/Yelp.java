@@ -89,10 +89,10 @@ public class Yelp {
 
 
   public static void main(String[] args) {
-    String consumerKey = "nxiczIEgf7-xAE2XN0fZhQ";
-    String consumerSecret = "Cv5DFVu3pags0nABkkkQoiHDNA8";
-    String token = "Kbovu2vAGmvhWmIfgfRIv1pdE7jRlODy";
-    String tokenSecret = "AgYyLrHoXaS2bd_eCoOnos_CIGU";
+    String consumerKey = "";
+    String consumerSecret = "";
+    String token = "";
+    String tokenSecret = "";
 
     Yelp yelp = new Yelp(consumerKey, consumerSecret, token, tokenSecret);
     //String response = yelp.search("burritos", 30.361471, -87.164326);
